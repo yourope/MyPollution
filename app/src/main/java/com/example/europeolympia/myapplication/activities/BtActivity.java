@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -26,9 +25,8 @@ import java.util.Set;
  */
 
 public class BtActivity extends Activity {
-    Button mVisibleButton;
+    Button mVisibleButton, mBtButton;
     ToggleButton mOnOffButton;
-    ImageButton mBtButton;
     ListView lv;
     private BluetoothAdapter BA;
     private Set<BluetoothDevice> pairedDevices;
@@ -40,11 +38,10 @@ public class BtActivity extends Activity {
 
         mVisibleButton = (Button) findViewById(R.id.buttonVisible);
         mOnOffButton = (ToggleButton) findViewById(R.id.toggleButton);
-        mBtButton = (ImageButton) findViewById(R.id.imageButton);
+        mBtButton = (Button) findViewById(R.id.bluetoothButton);
 
         BA = BluetoothAdapter.getDefaultAdapter();
         lv = (ListView) findViewById(R.id.listView);
-
     }
 
     public void onToggleClicked(View view) {
@@ -64,20 +61,10 @@ public class BtActivity extends Activity {
         }
     }
 
-/*
-    public void on(View v) {
-
-    }
-
-    public void off(View v) {
-
-    }
-*/
     public void visible(View v) {
         Intent getVisible = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
         startActivityForResult(getVisible, 0);
     }
-
 
     public void listing(View v) {
         pairedDevices = BA.getBondedDevices();
@@ -91,5 +78,4 @@ public class BtActivity extends Activity {
 
         lv.setAdapter(adapter);
     }
-
 }

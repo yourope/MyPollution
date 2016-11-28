@@ -3,4 +3,9 @@
     <string name="map_activity">MAP ACTIVITY</string>
     <string name="bluetooth">BLUETOOTH MENU</string>
     <string name="devices">Detected devices :</string>
+    <string name="image_bg">image_background</string>
+    <string name="menu_bt">Bluetooth Menu</string>
+    <string name="on_off">ON/OFF</string>
+    <string name="visible">Get visible</string>
 </resources>
+

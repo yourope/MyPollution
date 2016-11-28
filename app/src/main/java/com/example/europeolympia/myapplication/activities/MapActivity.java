@@ -38,8 +38,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 
             if(mMap != null) {
 
-
-
                 if (mPosition != null) {
                     mPosition.remove();
                 }
